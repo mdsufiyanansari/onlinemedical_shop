@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCare Pharmacy - Online Medical Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-pills"></i>
+      <span>MediCare</span>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="🔍 Search medicine..." class="search-input">
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="#" class="nav-link" id="loginBtnNav"><i class="fas fa-sign-in-alt"></i> Login</a>
+      <a href="#" class="nav-link" id="logoutBtnNav" style="display:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a href="cart.html" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count" class="badge">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to MediCare Pharmacy</h1>
+    <p>Your trusted online medical store for quality healthcare products</p>
+    <button class="hero-btn" id="shopNowBtn">Shop Now</button>
+  </div>
+</section>
+
+<section class="categories">
+  <h2 class="section-title">Browse by Category</h2>
+  <div class="category-list">
+    <div class="category-card" data-category="Tablets">
+      <i class="fas fa-tablets"></i>
+      <p>Tablets</p>
+    </div>
+    <div class="category-card" data-category="Syrups">
+      <i class="fas fa-bottle-water"></i>
+      <p>Syrups</p>
+    </div>
+    <div class="category-card" data-category="Capsules">
+      <i class="fas fa-capsules"></i>
+      <p>Capsules</p>
+    </div>
+    <div class="category-card" data-category="Injections">
+      <i class="fas fa-syringe"></i>
+      <p>Injections</p>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <h2 class="section-title">Popular Medicines</h2>
+  <div class="products" id="productContainer"></div>
+</section>
+
+<!-- Login/Signup Modal -->
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="modalTitle">Login</h2>
+      <span class="close-modal" id="closeModal">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form id="authForm">
+        <div id="nameField" class="form-group" style="display:none;">
+          <label>Full Name</label>
+          <input type="text" id="fullName" placeholder="Enter your full name" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="authEmail" placeholder="Enter your email" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="authPassword" placeholder="Enter your password" class="form-input" required>
+        </div>
+        <button type="submit" class="auth-btn" id="authSubmitBtn">Login</button>
+      </form>
+      <p class="toggle-auth">
+        Don't have an account? <a href="#" id="toggleSignup">Sign up here</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4><i class="fas fa-pills"></i> MediCare</h4>
+      <p>Your trusted online medical store</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Shipping Info</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 MediCare Pharmacy. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

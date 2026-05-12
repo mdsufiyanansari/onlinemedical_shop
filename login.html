@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MediCare Pharmacy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-pills"></i>
+      <span>MediCare</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding: 4rem 2rem;">
+  <h1>Welcome Back</h1>
+  <p>Login to your account to continue shopping</p>
+</section>
+
+<div style="max-width: 400px; margin: 3rem auto; padding: 2rem;">
+  <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center; color: #333; margin-bottom: 2rem;">
+      <i class="fas fa-sign-in-alt" style="color: #667eea; margin-right: 0.5rem;"></i> Login
+    </h2>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label><i class="fas fa-envelope" style="margin-right: 0.5rem; color: #667eea;"></i> Email</label>
+        <input type="email" id="email" placeholder="Enter your email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-lock" style="margin-right: 0.5rem; color: #667eea;"></i> Password</label>
+        <input type="password" id="password" placeholder="Enter your password" class="form-input" required>
+      </div>
+      <button type="submit" class="auth-btn" style="font-size: 1.05rem;">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+    </form>
+
+    <p class="toggle-auth" style="text-align: center; margin-top: 1.5rem;">
+      Don't have an account? <a href="signup.html" style="color: #667eea; text-decoration: none; font-weight: 600;">Sign up here</a>
+    </p>
+  </div>
+</div>
+
+<footer class="footer" style="margin-top: 5rem;">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4><i class="fas fa-pills"></i> MediCare</h4>
+      <p>Your trusted online medical store</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 MediCare Pharmacy. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const users = JSON.parse(localStorage.getItem("users")) || {};
+    const user = users[email];
+
+    if (user && user.password === password) {
+      localStorage.setItem("currentUser", email);
+      alert("Login successful!");
+      window.location.href = "index.html";
+    } else {
+      alert("Invalid email or password");
+    }
+  });
+</script>
+</body>
+</html>

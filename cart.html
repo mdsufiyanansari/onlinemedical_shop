@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - MediCare Pharmacy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="header-container">
+    <div class="logo">
+      <i class="fas fa-pills"></i>
+      <span>MediCare</span>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="cart.html" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count" class="badge">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="cart-container">
+  <h1 class="section-title"><i class="fas fa-shopping-cart"></i> Shopping Cart</h1>
+  
+  <div id="cartItems"></div>
+  
+  <div id="emptyCart" style="text-align: center; padding: 3rem;">
+    <i class="fas fa-inbox" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+    <p style="font-size: 1.2rem; color: #999;">Your cart is empty</p>
+    <a href="index.html" class="btn" style="display: inline-block; margin-top: 1rem; text-decoration: none;">
+      <i class="fas fa-shopping-bag"></i> Continue Shopping
+    </a>
+  </div>
+  
+  <div id="cartSummary" style="display: none;">
+    <div style="background: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h2 style="margin-top: 0; border-bottom: 2px solid #667eea; padding-bottom: 1rem;">
+        <i class="fas fa-calculator"></i> Order Summary
+      </h2>
+      <div style="display: flex; justify-content: space-between; margin: 1rem 0;">
+        <span>Subtotal:</span>
+        <span id="subtotal">₹ 0</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin: 1rem 0;">
+        <span>Discount (10%):</span>
+        <span id="discount" style="color: #2ecc71;">- ₹ 0</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin: 1rem 0;">
+        <span>Delivery:</span>
+        <span id="delivery">₹ 50</span>
+      </div>
+      <hr style="border: none; border-top: 2px solid #eee; margin: 1.5rem 0;">
+      <h3 id="total" style="display: flex; justify-content: space-between; color: #667eea; font-size: 1.5rem; margin: 0;"></h3>
+      
+      <button class="checkout-btn" onclick="checkout()" style="margin-top: 1.5rem;">
+        <i class="fas fa-lock"></i> Proceed To Checkout
+      </button>
+      <a href="index.html" class="btn" style="display: block; margin-top: 1rem; text-align: center; text-decoration: none; background: #e0e0e0; color: #333;">
+        <i class="fas fa-arrow-left"></i> Continue Shopping
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4><i class="fas fa-pills"></i> MediCare</h4>
+      <p>Your trusted online medical store</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Shipping Info</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 MediCare Pharmacy. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+</body>
+</html>
